@@ -5,6 +5,7 @@ const app = express()
 
 const mongoose = require('mongoose');
 const authRouter = require('./routes/auth');
+const postRouter = require('./routes/posts');
 
 const port = 3000
 
@@ -21,6 +22,7 @@ app.use(express.json());
 
 // Route Middleware
 app.use('/api/user', authRouter);
+app.use('/api/posts', postRouter);
 
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
